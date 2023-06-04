@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <form action="/updateProduct" method="post">
+      Product id:
+      <input type="text" id="pid" name="pid" value="<%prod.pid%>" readonly />
+      Product name:<input
+        type="text"
+        id="pname"
+        name="pname"
+        value="<%prod.pname%>"
+      />
+      Price:<input type="text" id="price" name="price" value="<%prod.price%>" />
+
+      <button type="submit" id="btn" name="btn" value="btn">
+        Update Product
+      </button>
+    </form>
+  </body>
+</html>
