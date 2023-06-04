@@ -1,0 +1,81 @@
+What is meant by XML?
+XML stands for extensible markup language. A markup language is a set of codes, or tags, that describes the text in a digital document.
+XML stands for eXtensible Markup Language
+XML is a markup language much like HTML
+XML was designed to store and transport data
+XML was designed to be self-descriptive
+
+
+Express is a web application framework for Node
+ Its built on top of Node.js.
+ It provides various features that make web application development fast and easy
+compared to Node.js.
+• Create a new folder: eg E:\Express-app
+• E:\Express-app>npm init //for creating package.json
+• E:\Express-app>npm install express --save 
+
+Routes:
+The path is a string or regular expression representing the URL that the route
+responds to.
+ Note that the query string is not considered part of the route’s URL. 
+
+Express also augments the request and response objects with additional
+methods. Example response.send() .
+ send() is used to send a response status code and/or body back to the client.
+ If the first argument to send() is a number, then it is treated as the status code. If a
+status code is not provided, Express will send back a 200.
+ The response body can be specified in the first or second argument, and can be a string,
+Buffer, array, or object.
+
+
+
+var express = require("express");
+var app = express();
+var path = require('path');
+app.get("/buff", function(req, res, next) {
+ var buff = Buffer.from("Hello World");
+ res.send(buff.toString());
+});
+app.get("/string", function(req, res, next) {
+ res.send("Hello <strong>String response</strong>");
+});
+app.get("/json", function(req, res, next) {
+ res.send({name:'Soha',age:23});
+});
+app.get("/array", function(req, res, next) {
+ res.send(['NodeJS','Angular','ExpressJS']);
+});
+app.get("/file", function(req, res, next) {
+ res.sendFile(path.join(__dirname + '/summer.html'));
+});
+app.listen(3000);
+
+req.params - An object containing parameter values parsed from the URL path.
+ For example, if you have the route /user/:name, then the “name” property is available
+as req.params.name. This object defaults to {}.
+
+
+• To handle HTTP POST request in Express.js version 4 and above, you need
+to install a middleware module called body-parser. 
+This body-parser module parses the JSON, buffer, string and url encoded data
+submitted using HTTP POST request.
+ Eg :To parse json data: app.use(bodyParser.json())
+
+ Routes HTTP GET requests to the specified path with the specified callback
+functions. Callback functions can be:
+o A middleware function.
+o A series of middleware functions (separated by commas).
+o An array of middleware functions. 
+
+
+A template engine facilitates you to use static template files in your applications.
+ At runtime, it replaces variables in a template file with actual values, and transforms the
+template into an HTML file sent to the client.
+ This approach makes it easier to design an HTML page.
+ Some popular template engines that work with Express are Pug, Mustache, Haml,
+Hogan, Swig and EJS. 
+
+
+
+Rendering and RedirectingEdit
+There is an important difference between render and redirect_to: render will tell Rails what view it should use (with the same parameters you may have already sent) but redirect_to sends a new request to the browser.
