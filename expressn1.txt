@@ -79,3 +79,14 @@ Hogan, Swig and EJS.
 
 Rendering and RedirectingEdit
 There is an important difference between render and redirect_to: render will tell Rails what view it should use (with the same parameters you may have already sent) but redirect_to sends a new request to the browser.
+
+_______________________________________________________________________________________________________________________________________________________________-
+
+npm install create-react-app -g
+create-react-app-guru
+npm install create-router-dom
+npm start 
+cd guru
+
+
+alter user 'root'@'localhost' identified with mysql_native_password by 'root123'
